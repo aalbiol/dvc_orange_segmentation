@@ -2,113 +2,121 @@ data:
   prob_train: 0.8
   
   training_size: 150
+  crop_size: null
 
-  #delimiter: _
+  delimiter: _
   maxvalues: [255,1023,1023]
   
   root_folder: data
-  suffixes: null # Para cimgs todos los canales van en un solo archivo .cimg
+  suffixes: 
+  - _RGB.png
+  - _NIR.png
+  - _UV.png
   channel_list: null
   use_segmentation_masks : true # Use annotated masks
 
   train:
-  - -  train_list.txt
+  - - train_list.txt
     - 20240219_190526_Img_20240219_NaranjaRottEncoder/jsons
     - 20240219_190526_Img_20240219_NaranjaRottEncoder/images
-  - -  train_list.txt
+  - - train_list.txt
     - 20240220_142555_Img_20240220_goods/jsons
     - 20240220_142555_Img_20240220_goods/images
-  - -  train_list.txt
+  - - train_list.txt
     - 20240312_210918_prod/jsons
     - 20240312_210918_prod/images
-  - -  train_list.txt
+  - - train_list.txt
     - 20240312_210929_prod/jsons
     - 20240312_210929_prod/images
-  - -  train_list.txt
+  - - train_list.txt
     - 20240321_162918_Img_20240321_162913/jsons
     - 20240321_162918_Img_20240321_162913/images
-  - -  train_list.txt
+  - - train_list.txt
     - 20240321_172502_defectos_rotando/jsons
     - 20240321_172502_defectos_rotando/images
   - - train_list.txt
     - 20240805/jsons
     - 20240805/images
-  - -  train_list.txt
-    - 20240312_211001_prod/20240805/jsons
-    - 20240312_211001_prod/20240805/images
-  - -  train_list.txt
-    - 20240321_163007_Img_20240321_162913/20240805/jsons
-    - 20240321_163007_Img_20240321_162913/20240805/images
+  - - train_list.txt
+    - 20240805b/jsons
+    - 20240805b/images
+  - - train_list.txt
+    - 20240805c/jsons
+    - 20240805c/images
 
 
   
-
   val:
   - - val_list.txt
-    - lote1/jsons
-    - lote1/images
+    - 20240219_190526_Img_20240219_NaranjaRottEncoder/jsons
+    - 20240219_190526_Img_20240219_NaranjaRottEncoder/images
   - - val_list.txt
-    - lote2/20230419_100534_BuenoEncoder/jsons  
-    - lote2/20230419_100534_BuenoEncoder/imags
+    - 20240220_142555_Img_20240220_goods/jsons
+    - 20240220_142555_Img_20240220_goods/images
   - - val_list.txt
-    - lote2/20230419_112500_BuenoEncoder/jsons  
-    - lote2/20230419_112500_BuenoEncoder/imags
+    - 20240312_210918_prod/jsons
+    - 20240312_210918_prod/images
   - - val_list.txt
-    - lote2/20230419_113002_LagrimaEncoder/jsons  
-    - lote2/20230419_113002_LagrimaEncoder/imags
+    - 20240312_210929_prod/jsons
+    - 20240312_210929_prod/images
   - - val_list.txt
-    - lote2/20230419_114356_CicatrizDefSupEncoder/jsons  
-    - lote2/20230419_114356_CicatrizDefSupEncoder/imags
+    - 20240321_162918_Img_20240321_162913/jsons
+    - 20240321_162918_Img_20240321_162913/images
   - - val_list.txt
-    - lote2/20230419_115102_HojaRaboConDeformeEncoder/jsons  
-    - lote2/20230419_115102_HojaRaboConDeformeEncoder/imags
+    - 20240321_172502_defectos_rotando/jsons
+    - 20240321_172502_defectos_rotando/images
   - - val_list.txt
-    - lote2/20230419_115631_DestrioRotaEncoder/jsons  
-    - lote2/20230419_115631_DestrioRotaEncoder/imags
+    - 20240805/jsons
+    - 20240805/images
   - - val_list.txt
-    - lote2/20230419_120236_DeformesDoblesEncoder/jsons  
-    - lote2/20230419_120236_DeformesDoblesEncoder/imags
+    - 20240805b/jsons
+    - 20240805b/images
   - - val_list.txt
-    - lote2/20230419_122046ArrugadoEncoder/jsons  
-    - lote2/20230419_122046ArrugadoEncoder/imags
-  - - val_list.txt
-    - lote2/20230419_121536_BlandoEncoder/jsons  
-    - lote2/20230419_121536_BlandoEncoder/imags
-  - - val_list.txt
-    - lote2/20230419_122528_VerdeRojoEncoder/jsons  
-    - lote2/20230419_122528_VerdeRojoEncoder/imags           
+    - 20240805c/jsons
+    - 20240805c/images
 
 model:
   defect_types:
-  - Blandos
-  - Cicatrices
-  - defectos_severos
-  - Deformes
-  - Deshidratado
-  - Flor_seca
-  - Lagrima
-  - Rabos
-  - Rojos
-  - Verdes
-  num_channels_input: 4
-  model_version: 50
+  - "Pedunculo"
+  - "Contraped"
+
+  num_channels_input: 5
+  model_version: 50 # Options: 50 , MobileNet
 
 train:  
-  batch_size: 30
-  epochs: 40
-  in_memory: true
   initial_model: null
+  batch_size: 30
+  in_memory: true
+  num_workers: -1    
+
+#Learning
+  epochs: 100
+  unfreeze_epoch: 6
+  warmup: 2
+  learning_rate: 0.003  
+  optimizer: adam
+  gamma_param: 0.1
+
+# Regularization
   label_smoothing: 0.1
-  learning_rate: 0.01
-  optimizer: sgd
-  num_workers: -1
+  p_dropout: 0.5 
+  weights_decay: 0.001
+
   output:
     model_file: arandanos2.pkl
     path: out_models
-  p_dropout: 0.5 
-  unfreeze_epoch: 6
-  warmup: 3
-  weights_decay: 0.001
+
+# MIL
+  min_defect_area: 50
+  constrain_weight: 5.0
+  min_neg_fraction: 0.95
+  bottom_constrain_weight: 1.0
+  binmask_weight: 30.0 
+  class_weights: 
+  - 1.0
+  - 1.0
+
+
   logname: orange_mil_segmentation
   wandb_project: DVC_segmentation  
 
