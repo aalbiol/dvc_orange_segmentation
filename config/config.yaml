@@ -1,7 +1,9 @@
 data:
   prob_train: 0.8
   
-  training_size: 150
+  training_size: 
+  - 150
+  - 150
   crop_size: null
 
   delimiter: _
@@ -87,10 +89,10 @@ train:
   initial_model: null
   batch_size: 30
   in_memory: true
-  num_workers: -1    
+  num_workers: 10    
 
 #Learning
-  epochs: 100
+  epochs: 2 
   unfreeze_epoch: 6
   warmup: 2
   learning_rate: 0.003  
@@ -109,7 +111,7 @@ train:
 # MIL
   min_defect_area: 50
   constrain_weight: 5.0
-  min_neg_fraction: 0.95
+  min_negative_fraction: 0.95
   bottom_constrain_weight: 1.0
   binmask_weight: 30.0 
   class_weights: 
