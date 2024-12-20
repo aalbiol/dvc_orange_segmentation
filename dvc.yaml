@@ -1,0 +1,71 @@
+stages:
+  split_train_val:
+    cmd: python ../src_view_segmentation/data/split_train_val.py config/config.yaml
+    deps:
+    - ../src_view_segmentation/data/split_train_val.py
+    params:
+    - config/config.yaml:
+      - data
+    outs:
+    -  data/20240321_172502_defectos_rotando/jsons/val_list.txt
+    -  data/20240321_172502_defectos_rotando/jsons/train_list.txt
+    -  data/20240220_142555_Img_20240220_goods/jsons/val_list.txt
+    -  data/20240220_142555_Img_20240220_goods/jsons/train_list.txt
+    -  data/20240312_210918_prod/jsons/val_list.txt
+    -  data/20240312_210918_prod/jsons/train_list.txt
+    -  data/20240312_210929_prod/jsons/val_list.txt
+    -  data/20240312_210929_prod/jsons/train_list.txt
+    -  data/20240805c/jsons/val_list.txt
+    -  data/20240805c/jsons/train_list.txt
+    -  data/20240805b/jsons/val_list.txt
+    -  data/20240805b/jsons/train_list.txt
+    -  data/20240805/jsons/val_list.txt
+    -  data/20240805/jsons/train_list.txt
+    -  data/20240219_190526_Img_20240219_NaranjaRottEncoder/jsons/val_list.txt
+    -  data/20240219_190526_Img_20240219_NaranjaRottEncoder/jsons/train_list.txt
+    -  data/20240321_162918_Img_20240321_162913/jsons/val_list.txt
+    -  data/20240321_162918_Img_20240321_162913/jsons/train_list.txt
+
+
+  # train:
+  #   cmd: python ../src_clasificacion_vistas/train/trainMIL.py --config config/config2.yaml
+  #   deps:
+  #   - ../src_clasificacion_vistas/train/trainMIL.py
+
+
+  #   params:
+  #   - config/config2.yaml:
+  #     - data
+  #     - train
+  #     - model 	
+  #   outs:
+  #   - out_models/arandanos2.pkl
+
+  # evaluate:
+  #   cmd: python ../src_clasificacion_vistas/evaluate/evaluateMIL.py config/config2.yaml 
+  #   deps:
+  #   - ../src_clasificacion_vistas/evaluate/evaluateMIL.py
+  #   - out_models/arandanos2.pkl
+  #   params:
+  #   - config/config2.yaml:
+  #     - data
+  #     - evaluate
+  #     - model 	
+  #   outs:
+  #   - out_evaluate/aucs.json
+  #   - out_evaluate/train_scores.json
+  #   - out_evaluate/val_scores.json
+  
+  # report:
+  #   cmd: jupyter nbconvert --to notebook --execute reports/analisis_prestaciones.ipynb
+  #   deps:
+  #   - reports/analisis_prestaciones.ipynb
+  #   - out_evaluate/aucs.json
+  #   - out_evaluate/train_scores.json
+  #   - out_evaluate/val_scores.json    
+  #   outs:
+  #   - reports/analisis_prestaciones.nbconvert.ipynb
+
+
+  
+
