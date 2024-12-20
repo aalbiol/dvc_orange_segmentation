@@ -1,0 +1,156 @@
+schema: '2.0'
+stages:
+  split_train_val:
+    cmd: python ../src_view_segmentation/data/split_train_val.py config/config.yaml
+    deps:
+    - path: ../src_view_segmentation/data/split_train_val.py
+      hash: md5
+      md5: 315322c14fb74c43d75e69b90402de6e
+      size: 2860
+    params:
+      config/config.yaml:
+        data:
+          prob_train: 0.8
+          training_size: 150
+          crop_size:
+          delimiter: _
+          maxvalues:
+          - 255
+          - 1023
+          - 1023
+          root_folder: data
+          suffixes:
+          - _RGB.png
+          - _NIR.png
+          - _UV.png
+          channel_list:
+          use_segmentation_masks: true
+          train:
+          - - train_list.txt
+            - 20240219_190526_Img_20240219_NaranjaRottEncoder/jsons
+            - 20240219_190526_Img_20240219_NaranjaRottEncoder/images
+          - - train_list.txt
+            - 20240220_142555_Img_20240220_goods/jsons
+            - 20240220_142555_Img_20240220_goods/images
+          - - train_list.txt
+            - 20240312_210918_prod/jsons
+            - 20240312_210918_prod/images
+          - - train_list.txt
+            - 20240312_210929_prod/jsons
+            - 20240312_210929_prod/images
+          - - train_list.txt
+            - 20240321_162918_Img_20240321_162913/jsons
+            - 20240321_162918_Img_20240321_162913/images
+          - - train_list.txt
+            - 20240321_172502_defectos_rotando/jsons
+            - 20240321_172502_defectos_rotando/images
+          - - train_list.txt
+            - 20240805/jsons
+            - 20240805/images
+          - - train_list.txt
+            - 20240805b/jsons
+            - 20240805b/images
+          - - train_list.txt
+            - 20240805c/jsons
+            - 20240805c/images
+          val:
+          - - val_list.txt
+            - 20240219_190526_Img_20240219_NaranjaRottEncoder/jsons
+            - 20240219_190526_Img_20240219_NaranjaRottEncoder/images
+          - - val_list.txt
+            - 20240220_142555_Img_20240220_goods/jsons
+            - 20240220_142555_Img_20240220_goods/images
+          - - val_list.txt
+            - 20240312_210918_prod/jsons
+            - 20240312_210918_prod/images
+          - - val_list.txt
+            - 20240312_210929_prod/jsons
+            - 20240312_210929_prod/images
+          - - val_list.txt
+            - 20240321_162918_Img_20240321_162913/jsons
+            - 20240321_162918_Img_20240321_162913/images
+          - - val_list.txt
+            - 20240321_172502_defectos_rotando/jsons
+            - 20240321_172502_defectos_rotando/images
+          - - val_list.txt
+            - 20240805/jsons
+            - 20240805/images
+          - - val_list.txt
+            - 20240805b/jsons
+            - 20240805b/images
+          - - val_list.txt
+            - 20240805c/jsons
+            - 20240805c/images
+    outs:
+    - path: data/20240219_190526_Img_20240219_NaranjaRottEncoder/jsons/train_list.txt
+      hash: md5
+      md5: 7373c31eac65601e7ed9a95f751b9f8f
+      size: 23316
+    - path: data/20240219_190526_Img_20240219_NaranjaRottEncoder/jsons/val_list.txt
+      hash: md5
+      md5: f8717d243f3a454915fbe806d99ea508
+      size: 6119
+    - path: data/20240220_142555_Img_20240220_goods/jsons/train_list.txt
+      hash: md5
+      md5: 91bb227a08d2eb1f10eb54043f3b70d1
+      size: 9019
+    - path: data/20240220_142555_Img_20240220_goods/jsons/val_list.txt
+      hash: md5
+      md5: dd69f81f21af85b531d73cce6bb2c0e2
+      size: 1972
+    - path: data/20240312_210918_prod/jsons/train_list.txt
+      hash: md5
+      md5: 22944238548630882a2b9b572099a0e4
+      size: 35960
+    - path: data/20240312_210918_prod/jsons/val_list.txt
+      hash: md5
+      md5: 6daf4e8279321c79fc4186cafbdd6a07
+      size: 8816
+    - path: data/20240312_210929_prod/jsons/train_list.txt
+      hash: md5
+      md5: 0e636a14fa34aa82cb073f01a71451ad
+      size: 28101
+    - path: data/20240312_210929_prod/jsons/val_list.txt
+      hash: md5
+      md5: 1a22db4e8e9622d2c9c933564163dcaa
+      size: 7221
+    - path: data/20240321_162918_Img_20240321_162913/jsons/train_list.txt
+      hash: md5
+      md5: 1a4f472ff366a8dea4da23d0656d35ad
+      size: 9512
+    - path: data/20240321_162918_Img_20240321_162913/jsons/val_list.txt
+      hash: md5
+      md5: 7c51e289fb553b347d23f966bda75a56
+      size: 2697
+    - path: data/20240321_172502_defectos_rotando/jsons/train_list.txt
+      hash: md5
+      md5: ec4b6343e13103c68112765bbca28ba6
+      size: 26593
+    - path: data/20240321_172502_defectos_rotando/jsons/val_list.txt
+      hash: md5
+      md5: 593964c41972577a0325664b2e8fced0
+      size: 5916
+    - path: data/20240805/jsons/train_list.txt
+      hash: md5
+      md5: 7f08bcf9191adecdda1d9ae47aa28381
+      size: 22997
+    - path: data/20240805/jsons/val_list.txt
+      hash: md5
+      md5: b421d2af219f4f96a1df263e8d643147
+      size: 5510
+    - path: data/20240805b/jsons/train_list.txt
+      hash: md5
+      md5: 12a79cc233dd215c80d489525bc64ef3
+      size: 23113
+    - path: data/20240805b/jsons/val_list.txt
+      hash: md5
+      md5: b4ede336167f431c1f3b13d4752cef48
+      size: 5887
+    - path: data/20240805c/jsons/train_list.txt
+      hash: md5
+      md5: a03c82b3aebd59964ccd610acb079f88
+      size: 17835
+    - path: data/20240805c/jsons/val_list.txt
+      hash: md5
+      md5: df4867187ba02bf37bda150ac3caad11
+      size: 5655
