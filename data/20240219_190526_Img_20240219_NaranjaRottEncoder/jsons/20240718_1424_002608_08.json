@@ -1,0 +1,14 @@
+{
+"batchName": "Name",
+"batchType": "Type",
+"batchOrigin": "Origin",
+"annotations": {
+},
+"files": {
+"1": "20240718_1424_002608_08_RGB.png",
+"2": "20240718_1424_002608_08_NIR.png",
+"3": "20240718_1424_002608_08_UV.png",
+"4": "20240718_1424_002608_08.png"
+},
+"FillValue": "22"
+}

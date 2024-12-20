@@ -1,0 +1,19 @@
+{
+    "Annotator": "cristina",
+    "FillValue": "15",
+    "Last Annotation Date": "2024/08/06",
+    "annotations": {
+        "Contraped": "1",
+        "Malo": "0",
+        "Pedunculo": "0"
+    },
+    "batchName": "Name",
+    "batchOrigin": "Origin",
+    "batchType": "Type",
+    "files": {
+        "1": "20240805_0942_000181_10_RGB.png",
+        "2": "20240805_0942_000181_10_NIR.png",
+        "3": "20240805_0942_000181_10_UV.png",
+        "4": "20240805_0942_000181_10.png"
+    }
+}

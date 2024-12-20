@@ -1,0 +1,16 @@
+{
+    "batchName": "Name",
+    "batchType": "Type",
+    "batchOrigin": "Origin",
+    "annotations": {
+        "Contraped": "1",
+        "Pedunculo": "0"
+    },
+    "files": {
+        "1": "20240718_1428_000830_00_RGB.png",
+        "2": "20240718_1428_000830_00_NIR.png",
+        "3": "20240718_1428_000830_00_UV.png",
+        "4": "20240718_1428_000830_00.png"
+    },
+    "FillValue": "13"
+}
