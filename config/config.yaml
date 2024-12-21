@@ -39,12 +39,12 @@ data:
   - - train_list.txt
     - 20240805/jsons
     - 20240805/images
-  - - train_list.txt
-    - 20240805b/jsons
-    - 20240805b/images
-  - - train_list.txt
-    - 20240805c/jsons
-    - 20240805c/images
+  # - - train_list.txt
+  #   - 20240805b/jsons
+  #   - 20240805b/images
+  # - - train_list.txt
+  #   - 20240805c/jsons
+  #   - 20240805c/images
 
 
   
@@ -70,12 +70,12 @@ data:
   - - val_list.txt
     - 20240805/jsons
     - 20240805/images
-  - - val_list.txt
-    - 20240805b/jsons
-    - 20240805b/images
-  - - val_list.txt
-    - 20240805c/jsons
-    - 20240805c/images
+  # - - val_list.txt
+  #   - 20240805b/jsons
+  #   - 20240805b/images
+  # - - val_list.txt
+  #   - 20240805c/jsons
+  #   - 20240805c/images
 
 model:
   defect_types:
@@ -92,7 +92,7 @@ train:
   num_workers: 10    
 
 #Learning
-  epochs: 2 
+  epochs: 50 
   unfreeze_epoch: 6
   warmup: 2
   learning_rate: 0.003  
@@ -120,7 +120,8 @@ train:
 
 
   logname: orange_mil_segmentation
-  wandb_project: DVC_segmentation  
+  wandb_project: DVC_segmentation 
+  log_cimg:  data/test/log_cimg/im_log.cimg
 
   augmentation:
     random_rotation: 30

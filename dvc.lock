@@ -11,7 +11,9 @@ stages:
       config/config.yaml:
         data:
           prob_train: 0.8
-          training_size: 150
+          training_size:
+          - 150
+          - 150
           crop_size:
           delimiter: _
           maxvalues:
@@ -47,12 +49,6 @@ stages:
           - - train_list.txt
             - 20240805/jsons
             - 20240805/images
-          - - train_list.txt
-            - 20240805b/jsons
-            - 20240805b/images
-          - - train_list.txt
-            - 20240805c/jsons
-            - 20240805c/images
           val:
           - - val_list.txt
             - 20240219_190526_Img_20240219_NaranjaRottEncoder/jsons
@@ -75,82 +71,60 @@ stages:
           - - val_list.txt
             - 20240805/jsons
             - 20240805/images
-          - - val_list.txt
-            - 20240805b/jsons
-            - 20240805b/images
-          - - val_list.txt
-            - 20240805c/jsons
-            - 20240805c/images
     outs:
     - path: data/20240219_190526_Img_20240219_NaranjaRottEncoder/jsons/train_list.txt
       hash: md5
-      md5: 7373c31eac65601e7ed9a95f751b9f8f
-      size: 23316
+      md5: 359e9dffa1cb810e652fe26547615e1b
+      size: 14239
     - path: data/20240219_190526_Img_20240219_NaranjaRottEncoder/jsons/val_list.txt
       hash: md5
-      md5: f8717d243f3a454915fbe806d99ea508
-      size: 6119
+      md5: 673e80dca711983c78d57d1d180f3382
+      size: 1827
     - path: data/20240220_142555_Img_20240220_goods/jsons/train_list.txt
       hash: md5
-      md5: 91bb227a08d2eb1f10eb54043f3b70d1
-      size: 9019
+      md5: d263d05d9e9573e60eed244e714bbbdd
+      size: 8613
     - path: data/20240220_142555_Img_20240220_goods/jsons/val_list.txt
       hash: md5
-      md5: dd69f81f21af85b531d73cce6bb2c0e2
-      size: 1972
+      md5: 5a4fcd1321e373e90c452819c57dbde4
+      size: 2175
     - path: data/20240312_210918_prod/jsons/train_list.txt
       hash: md5
-      md5: 22944238548630882a2b9b572099a0e4
-      size: 35960
+      md5: bef438cf43d6e76b500797082d1a69bc
+      size: 35148
     - path: data/20240312_210918_prod/jsons/val_list.txt
       hash: md5
-      md5: 6daf4e8279321c79fc4186cafbdd6a07
-      size: 8816
+      md5: 13d58ac29cc76eaec85ec50b45b6d05a
+      size: 8468
     - path: data/20240312_210929_prod/jsons/train_list.txt
       hash: md5
-      md5: 0e636a14fa34aa82cb073f01a71451ad
-      size: 28101
+      md5: 7ac99010742fc2775f5476f06890f8ce
+      size: 27434
     - path: data/20240312_210929_prod/jsons/val_list.txt
       hash: md5
-      md5: 1a22db4e8e9622d2c9c933564163dcaa
-      size: 7221
+      md5: 2e6f040c96781d430d1c25c9f6ede72e
+      size: 7192
     - path: data/20240321_162918_Img_20240321_162913/jsons/train_list.txt
       hash: md5
-      md5: 1a4f472ff366a8dea4da23d0656d35ad
-      size: 9512
+      md5: a655e184f2f4b3f0ca1c9fb481134e51
+      size: 9744
     - path: data/20240321_162918_Img_20240321_162913/jsons/val_list.txt
       hash: md5
-      md5: 7c51e289fb553b347d23f966bda75a56
-      size: 2697
+      md5: 4cf32c90e875525fb060c164dd7f97d5
+      size: 2349
     - path: data/20240321_172502_defectos_rotando/jsons/train_list.txt
       hash: md5
-      md5: ec4b6343e13103c68112765bbca28ba6
-      size: 26593
+      md5: e8072e1482a3a8cbb37a0782c230e922
+      size: 5394
     - path: data/20240321_172502_defectos_rotando/jsons/val_list.txt
       hash: md5
-      md5: 593964c41972577a0325664b2e8fced0
-      size: 5916
+      md5: 198907c0e27a639a07276bba4aa191c9
+      size: 1363
     - path: data/20240805/jsons/train_list.txt
       hash: md5
-      md5: 7f08bcf9191adecdda1d9ae47aa28381
-      size: 22997
+      md5: 09a267e451b2fa5598521673aaf4cd26
+      size: 65569
     - path: data/20240805/jsons/val_list.txt
       hash: md5
-      md5: b421d2af219f4f96a1df263e8d643147
-      size: 5510
-    - path: data/20240805b/jsons/train_list.txt
-      hash: md5
-      md5: 12a79cc233dd215c80d489525bc64ef3
-      size: 23113
-    - path: data/20240805b/jsons/val_list.txt
-      hash: md5
-      md5: b4ede336167f431c1f3b13d4752cef48
-      size: 5887
-    - path: data/20240805c/jsons/train_list.txt
-      hash: md5
-      md5: a03c82b3aebd59964ccd610acb079f88
-      size: 17835
-    - path: data/20240805c/jsons/val_list.txt
-      hash: md5
-      md5: df4867187ba02bf37bda150ac3caad11
-      size: 5655
+      md5: 5f4dbe0112467a5880c2258e51adf972
+      size: 15428
