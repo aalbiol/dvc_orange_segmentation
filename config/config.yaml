@@ -138,7 +138,8 @@ train:
 
 evaluate:
   model_dir: out_models
-  model_file: orange_segment_ped_cped.pkl
+  model_file: orange_seg_ped_cped.pkl
+  
   
   report_dir: out_evaluate
   train_predictions: train_scores.json
