@@ -23,19 +23,19 @@ stages:
     -  data/20240321_162918_Img_20240321_162913/jsons/train_list.txt
 
 
-  # train:
-  #   cmd: python ../src_clasificacion_vistas/train/trainMIL.py --config config/config2.yaml
-  #   deps:
-  #   - ../src_clasificacion_vistas/train/trainMIL.py
+  train:
+    cmd: python ../src_view_segmentation/train/trainMIL.py config/config.yaml
+    deps:
+    - ../src_view_segmentation/train/trainMIL.py
 
 
-  #   params:
-  #   - config/config2.yaml:
-  #     - data
-  #     - train
-  #     - model 	
-  #   outs:
-  #   - out_models/arandanos2.pkl
+    params:
+    - config/config.yaml:
+      - data
+      - train
+      - model 	
+    outs:
+    - out_models/orange_seg_ped_cped.pkl
 
   # evaluate:
   #   cmd: python ../src_clasificacion_vistas/evaluate/evaluateMIL.py config/config2.yaml 

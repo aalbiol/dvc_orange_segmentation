@@ -39,12 +39,7 @@ data:
   - - train_list.txt
     - 20240805/jsons
     - 20240805/images
-  # - - train_list.txt
-  #   - 20240805b/jsons
-  #   - 20240805b/images
-  # - - train_list.txt
-  #   - 20240805c/jsons
-  #   - 20240805c/images
+
 
 
   
@@ -70,12 +65,7 @@ data:
   - - val_list.txt
     - 20240805/jsons
     - 20240805/images
-  # - - val_list.txt
-  #   - 20240805b/jsons
-  #   - 20240805b/images
-  # - - val_list.txt
-  #   - 20240805c/jsons
-  #   - 20240805c/images
+
 
 model:
   defect_types:
@@ -87,15 +77,15 @@ model:
 
 train:  
   initial_model: null
-  batch_size: 30
-  in_memory: true
+  batch_size: 40
+  in_memory: false
   num_workers: 10    
 
 #Learning
-  epochs: 50 
+  epochs: 60 
   unfreeze_epoch: 6
-  warmup: 2
-  learning_rate: 0.003  
+  warmup: 3
+  learning_rate: 0.002  
   optimizer: adam
   gamma_param: 0.1
 
@@ -105,7 +95,7 @@ train:
   weights_decay: 0.001
 
   output:
-    model_file: arandanos2.pkl
+    model_file: orange_seg_ped_cped.pkl
     path: out_models
 
 # MIL
@@ -120,7 +110,7 @@ train:
 
 
   logname: orange_mil_segmentation
-  wandb_project: DVC_segmentation 
+  wandb_project: DVC_orange_segmentation 
   log_cimg:  data/test/log_cimg/im_log.cimg
 
   augmentation:
@@ -148,7 +138,7 @@ train:
 
 evaluate:
   model_dir: out_models
-  model_file: arandanos2.pkl
+  model_file: orange_segment_ped_cped.pkl
   
   report_dir: out_evaluate
   train_predictions: train_scores.json
@@ -158,8 +148,8 @@ evaluate:
 
 predict:
   model_dir: out_models
-  model_file: arandanos2.pkl
-  patron: "*.cimg"
+  model_file: orange_segment_ped_cped.pkl
+  patron: "*_RGB.png"
   
   report_dir: out_predict
     
