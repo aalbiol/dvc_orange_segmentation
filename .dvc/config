@@ -1,8 +1,10 @@
 [core]
     autostage = true
-    remote = remote_ssh
+    remote = orange_s3
 ['remote "rasp4remote"']
     url = webdavs://nube14.duckdns.org/remote.php/dav/files/dvcremote/datasets/orange_segmentation
     ssl_verify = false
 ['remote "remote_ssh"']
     url = ssh://aalbiol@mach2.dcom.upv.es:/home/aalbiol/dvcremote_oranges
+['remote "orange_s3"']
+    url = s3://msc-dev-datalake/datasets/orange

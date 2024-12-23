@@ -13,3 +13,9 @@ Si se pone como se indica abajo, el usuario/contraseña NO se almacenan en el re
 dvc remote modify --local rasp4remote user dvcremote
 dvc remote modify --local rasp4remote password Cocentaina
 ```
+
+
+# Para añadir remoto S3
+```
+dvc remote add -d orange_s3  s3://msc-dev-datalake/datasets/orange
+```
