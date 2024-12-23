@@ -265,8 +265,8 @@ stages:
     deps:
     - path: ../src_view_segmentation/evaluate/evaluate.py
       hash: md5
-      md5: b039ef59c9c70457626c96ae852bfee2
-      size: 8873
+      md5: 1cdc775a2ff7842ce25c2a0441e89be2
+      size: 9057
     - path: out_models/orange_seg_ped_cped.pkl
       hash: md5
       md5: 71528f5dc51f94734065e437792ad941
@@ -351,30 +351,30 @@ stages:
     outs:
     - path: out_evaluate/aucs.json
       hash: md5
-      md5: 1d95235e5b21e906c244bb756f266d1b
+      md5: 769dbb10eade59c4f7c5fd8290c0bcbf
       size: 361
     - path: out_evaluate/train_scores.json
       hash: md5
-      md5: f882fffd1d753b87d3768e05d92f22ea
+      md5: c781af2338459053e92b0e36d1966abb
       size: 1745192
     - path: out_evaluate/val_scores.json
       hash: md5
-      md5: efb2ba3558bae04fbda1916619a3394b
+      md5: a2d8c36740233dc135ff0640a4b52ed5
       size: 470481
   report:
     cmd: jupyter nbconvert --to notebook --execute reports/analisis_prestaciones.ipynb
     deps:
     - path: out_evaluate/aucs.json
       hash: md5
-      md5: 1d95235e5b21e906c244bb756f266d1b
+      md5: 769dbb10eade59c4f7c5fd8290c0bcbf
       size: 361
     - path: out_evaluate/train_scores.json
       hash: md5
-      md5: f882fffd1d753b87d3768e05d92f22ea
+      md5: c781af2338459053e92b0e36d1966abb
       size: 1745192
     - path: out_evaluate/val_scores.json
       hash: md5
-      md5: efb2ba3558bae04fbda1916619a3394b
+      md5: a2d8c36740233dc135ff0640a4b52ed5
       size: 470481
     - path: reports/analisis_prestaciones.ipynb
       hash: md5
@@ -383,5 +383,5 @@ stages:
     outs:
     - path: reports/analisis_prestaciones.nbconvert.ipynb
       hash: md5
-      md5: 15713fe31f458646611a415bb74dba56
+      md5: e879540f8530c3b1d86fb83918e8988e
       size: 57108
