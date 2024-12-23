@@ -5,8 +5,8 @@ stages:
     deps:
     - path: ../src_view_segmentation/data/split_train_val.py
       hash: md5
-      md5: 5de64fb4159896e4abf92e00bd424c2e
-      size: 2978
+      md5: 6a1de9c230dd38f02b06146a52247699
+      size: 3080
     params:
       config/config.yaml:
         data:
@@ -74,60 +74,60 @@ stages:
     outs:
     - path: data/20240219_190526_Img_20240219_NaranjaRottEncoder/jsons/train_list.txt
       hash: md5
-      md5: a51fd20c44a182d6b5434af3c5251def
-      size: 11339
+      md5: 65101ae8e7482f1e23e6bef2496560c6
+      size: 12390
     - path: data/20240219_190526_Img_20240219_NaranjaRottEncoder/jsons/val_list.txt
       hash: md5
-      md5: 62af79317a016f2fca6ca5823da432bd
-      size: 4727
+      md5: 61120de65ea6fa40de7ff54dc02167f4
+      size: 4230
     - path: data/20240220_142555_Img_20240220_goods/jsons/train_list.txt
       hash: md5
-      md5: 7e4ffdf6260c2aedeef3d49e3ed4c146
-      size: 8874
+      md5: 32e9c4e320b01e3bba2f0fb9736868c0
+      size: 8640
     - path: data/20240220_142555_Img_20240220_goods/jsons/val_list.txt
       hash: md5
-      md5: f6945bfda5b247f173b95030942722f8
-      size: 1914
+      md5: 4fe2f2179a5caf6c99559971a976c1d9
+      size: 2520
     - path: data/20240312_210918_prod/jsons/train_list.txt
       hash: md5
-      md5: c309363fa76455d1247bb39f57027ce2
-      size: 34771
+      md5: 12f884919de6b5f1139ce4ee9627afc7
+      size: 35550
     - path: data/20240312_210918_prod/jsons/val_list.txt
       hash: md5
-      md5: 07a6c4b1cf3e3a9d18249b146463aa3b
-      size: 8845
+      md5: 9b4e8e83ac8509421983dbb6621983ba
+      size: 9570
     - path: data/20240312_210929_prod/jsons/train_list.txt
       hash: md5
-      md5: 6fc606e91df38d80555ab643a905368e
-      size: 26999
+      md5: 7abb228ce2f4aadd1301a437eba35e19
+      size: 28140
     - path: data/20240312_210929_prod/jsons/val_list.txt
       hash: md5
-      md5: 7ba83e904e624847e3ba2e3c88062494
-      size: 7627
+      md5: 791825f0e7872f90d321fec3a199f2d6
+      size: 7680
     - path: data/20240321_162918_Img_20240321_162913/jsons/train_list.txt
       hash: md5
-      md5: 5ffdf6c59e5fc3dc5ceb65142736620b
-      size: 9744
+      md5: 7a68ac2d9a411bba667fc3cecc4d8fd3
+      size: 10140
     - path: data/20240321_162918_Img_20240321_162913/jsons/val_list.txt
       hash: md5
-      md5: f050e39bfa8177cf6397a6bdf3dc9a46
-      size: 2349
+      md5: 3805fefe7d83122846f8816da192c5f5
+      size: 2370
     - path: data/20240321_172502_defectos_rotando/jsons/train_list.txt
       hash: md5
-      md5: f8461d2689fc5455960db08c18127ee3
-      size: 5539
+      md5: d03dc92b3039e15b25a4372c38299649
+      size: 5310
     - path: data/20240321_172502_defectos_rotando/jsons/val_list.txt
       hash: md5
-      md5: 77492d59412d9df37e382f89af48a955
-      size: 1218
+      md5: 3bc4c16199cd7f9383f6288f6a929243
+      size: 1680
     - path: data/20240805/jsons/train_list.txt
       hash: md5
-      md5: 77a5c1e1c14ab448f8cefcaa8e357062
-      size: 64264
+      md5: 688b049ed24e411f5e175f996888a137
+      size: 67320
     - path: data/20240805/jsons/val_list.txt
       hash: md5
-      md5: 7a417b077a5836708de8b811d27389ee
-      size: 16733
+      md5: 66eb3096129982286c54ef13b45889e7
+      size: 16470
   train:
     cmd: python ../src_view_segmentation/train/trainMIL.py config/config.yaml
     deps:
@@ -265,8 +265,8 @@ stages:
     deps:
     - path: ../src_view_segmentation/evaluate/evaluate.py
       hash: md5
-      md5: 1cdc775a2ff7842ce25c2a0441e89be2
-      size: 9057
+      md5: d96c37b74125411ea8e55cb23ecd0140
+      size: 9131
     - path: out_models/orange_seg_ped_cped.pkl
       hash: md5
       md5: 71528f5dc51f94734065e437792ad941
@@ -351,37 +351,37 @@ stages:
     outs:
     - path: out_evaluate/aucs.json
       hash: md5
-      md5: 769dbb10eade59c4f7c5fd8290c0bcbf
-      size: 361
+      md5: 6a20852ab3212c556ccdb5f1d0b10347
+      size: 374
     - path: out_evaluate/train_scores.json
       hash: md5
-      md5: c781af2338459053e92b0e36d1966abb
-      size: 1745192
+      md5: 336ec3247f050694e98facad91b62bdb
+      size: 1821732
     - path: out_evaluate/val_scores.json
       hash: md5
-      md5: a2d8c36740233dc135ff0640a4b52ed5
-      size: 470481
+      md5: 156cc214f8ab18dd4b07fa4e2155ac64
+      size: 485823
   report:
     cmd: jupyter nbconvert --to notebook --execute reports/analisis_prestaciones.ipynb
     deps:
     - path: out_evaluate/aucs.json
       hash: md5
-      md5: 769dbb10eade59c4f7c5fd8290c0bcbf
-      size: 361
+      md5: 6a20852ab3212c556ccdb5f1d0b10347
+      size: 374
     - path: out_evaluate/train_scores.json
       hash: md5
-      md5: c781af2338459053e92b0e36d1966abb
-      size: 1745192
+      md5: 336ec3247f050694e98facad91b62bdb
+      size: 1821732
     - path: out_evaluate/val_scores.json
       hash: md5
-      md5: a2d8c36740233dc135ff0640a4b52ed5
-      size: 470481
+      md5: 156cc214f8ab18dd4b07fa4e2155ac64
+      size: 485823
     - path: reports/analisis_prestaciones.ipynb
       hash: md5
-      md5: 0babdd6f5d3a83e653f6833a72f6c745
-      size: 57108
+      md5: 7e7ada9c55b612aba0302b7a3d5ecec9
+      size: 57441
     outs:
     - path: reports/analisis_prestaciones.nbconvert.ipynb
       hash: md5
-      md5: e879540f8530c3b1d86fb83918e8988e
-      size: 57108
+      md5: 29d26367ee353f0260f419794d74f6ee
+      size: 56221
