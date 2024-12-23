@@ -260,3 +260,128 @@ stages:
       hash: md5
       md5: 71528f5dc51f94734065e437792ad941
       size: 262701680
+  evaluate:
+    cmd: python ../src_view_segmentation/evaluate/evaluate.py config/config.yaml
+    deps:
+    - path: ../src_view_segmentation/evaluate/evaluate.py
+      hash: md5
+      md5: b039ef59c9c70457626c96ae852bfee2
+      size: 8873
+    - path: out_models/orange_seg_ped_cped.pkl
+      hash: md5
+      md5: 71528f5dc51f94734065e437792ad941
+      size: 262701680
+    params:
+      config/config.yaml:
+        data:
+          prob_train: 0.8
+          training_size:
+          - 150
+          - 150
+          crop_size:
+          delimiter: _
+          maxvalues:
+          - 255
+          - 1023
+          - 1023
+          root_folder: data
+          suffixes:
+          - _RGB.png
+          - _NIR.png
+          - _UV.png
+          channel_list:
+          use_segmentation_masks: true
+          train:
+          - - train_list.txt
+            - 20240219_190526_Img_20240219_NaranjaRottEncoder/jsons
+            - 20240219_190526_Img_20240219_NaranjaRottEncoder/images
+          - - train_list.txt
+            - 20240220_142555_Img_20240220_goods/jsons
+            - 20240220_142555_Img_20240220_goods/images
+          - - train_list.txt
+            - 20240312_210918_prod/jsons
+            - 20240312_210918_prod/images
+          - - train_list.txt
+            - 20240312_210929_prod/jsons
+            - 20240312_210929_prod/images
+          - - train_list.txt
+            - 20240321_162918_Img_20240321_162913/jsons
+            - 20240321_162918_Img_20240321_162913/images
+          - - train_list.txt
+            - 20240321_172502_defectos_rotando/jsons
+            - 20240321_172502_defectos_rotando/images
+          - - train_list.txt
+            - 20240805/jsons
+            - 20240805/images
+          val:
+          - - val_list.txt
+            - 20240219_190526_Img_20240219_NaranjaRottEncoder/jsons
+            - 20240219_190526_Img_20240219_NaranjaRottEncoder/images
+          - - val_list.txt
+            - 20240220_142555_Img_20240220_goods/jsons
+            - 20240220_142555_Img_20240220_goods/images
+          - - val_list.txt
+            - 20240312_210918_prod/jsons
+            - 20240312_210918_prod/images
+          - - val_list.txt
+            - 20240312_210929_prod/jsons
+            - 20240312_210929_prod/images
+          - - val_list.txt
+            - 20240321_162918_Img_20240321_162913/jsons
+            - 20240321_162918_Img_20240321_162913/images
+          - - val_list.txt
+            - 20240321_172502_defectos_rotando/jsons
+            - 20240321_172502_defectos_rotando/images
+          - - val_list.txt
+            - 20240805/jsons
+            - 20240805/images
+        evaluate:
+          model_dir: out_models
+          model_file: orange_seg_ped_cped.pkl
+          report_dir: out_evaluate
+          train_predictions: train_scores.json
+          val_predictions: val_scores.json
+          aucs: aucs.json
+        model:
+          defect_types:
+          - Pedunculo
+          - Contraped
+          num_channels_input: 5
+          model_version: 50
+    outs:
+    - path: out_evaluate/aucs.json
+      hash: md5
+      md5: 1d95235e5b21e906c244bb756f266d1b
+      size: 361
+    - path: out_evaluate/train_scores.json
+      hash: md5
+      md5: f882fffd1d753b87d3768e05d92f22ea
+      size: 1745192
+    - path: out_evaluate/val_scores.json
+      hash: md5
+      md5: efb2ba3558bae04fbda1916619a3394b
+      size: 470481
+  report:
+    cmd: jupyter nbconvert --to notebook --execute reports/analisis_prestaciones.ipynb
+    deps:
+    - path: out_evaluate/aucs.json
+      hash: md5
+      md5: 1d95235e5b21e906c244bb756f266d1b
+      size: 361
+    - path: out_evaluate/train_scores.json
+      hash: md5
+      md5: f882fffd1d753b87d3768e05d92f22ea
+      size: 1745192
+    - path: out_evaluate/val_scores.json
+      hash: md5
+      md5: efb2ba3558bae04fbda1916619a3394b
+      size: 470481
+    - path: reports/analisis_prestaciones.ipynb
+      hash: md5
+      md5: 0babdd6f5d3a83e653f6833a72f6c745
+      size: 57108
+    outs:
+    - path: reports/analisis_prestaciones.nbconvert.ipynb
+      hash: md5
+      md5: 15713fe31f458646611a415bb74dba56
+      size: 57108

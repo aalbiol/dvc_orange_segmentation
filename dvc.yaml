@@ -37,30 +37,30 @@ stages:
     outs:
     - out_models/orange_seg_ped_cped.pkl
 
-  # evaluate:
-  #   cmd: python ../src_clasificacion_vistas/evaluate/evaluateMIL.py config/config2.yaml 
-  #   deps:
-  #   - ../src_clasificacion_vistas/evaluate/evaluateMIL.py
-  #   - out_models/arandanos2.pkl
-  #   params:
-  #   - config/config2.yaml:
-  #     - data
-  #     - evaluate
-  #     - model 	
-  #   outs:
-  #   - out_evaluate/aucs.json
-  #   - out_evaluate/train_scores.json
-  #   - out_evaluate/val_scores.json
+  evaluate:
+    cmd: python ../src_view_segmentation/evaluate/evaluate.py config/config.yaml 
+    deps:
+    - ../src_view_segmentation/evaluate/evaluate.py
+    - out_models/orange_seg_ped_cped.pkl
+    params:
+    - config/config.yaml:
+      - data
+      - evaluate
+      - model 	
+    outs:
+    - out_evaluate/aucs.json
+    - out_evaluate/train_scores.json
+    - out_evaluate/val_scores.json
   
-  # report:
-  #   cmd: jupyter nbconvert --to notebook --execute reports/analisis_prestaciones.ipynb
-  #   deps:
-  #   - reports/analisis_prestaciones.ipynb
-  #   - out_evaluate/aucs.json
-  #   - out_evaluate/train_scores.json
-  #   - out_evaluate/val_scores.json    
-  #   outs:
-  #   - reports/analisis_prestaciones.nbconvert.ipynb
+  report:
+    cmd: jupyter nbconvert --to notebook --execute reports/analisis_prestaciones.ipynb
+    deps:
+    - reports/analisis_prestaciones.ipynb
+    - out_evaluate/aucs.json
+    - out_evaluate/train_scores.json
+    - out_evaluate/val_scores.json    
+    outs:
+    - reports/analisis_prestaciones.nbconvert.ipynb
 
 
   
